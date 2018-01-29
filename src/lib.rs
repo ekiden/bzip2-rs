@@ -49,7 +49,10 @@
 
 #![deny(missing_docs, warnings)]
 #![doc(html_root_url = "https://docs.rs/bzip2/0.3")]
+#![feature(prelude_import)]
+#![no_std]
 
+extern crate sgx_tstd as std;
 extern crate bzip2_sys as ffi;
 extern crate libc;
 #[cfg(test)]
@@ -61,6 +64,10 @@ extern crate quickcheck;
 extern crate tokio_io;
 #[cfg(feature = "tokio")]
 extern crate futures;
+
+#[allow(unused)]
+#[prelude_import]
+use std::prelude::v1::*;
 
 pub use mem::{Compress, Decompress, Action, Status, Error};
 

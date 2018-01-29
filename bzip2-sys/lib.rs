@@ -1,4 +1,5 @@
 #![doc(html_root_url = "https://docs.rs/bzip2-sys/0.1")]
+#![no_std]
 
 extern crate libc;
 
